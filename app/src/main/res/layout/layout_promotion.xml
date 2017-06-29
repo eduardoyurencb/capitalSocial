@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/contentPromotion"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/promopapajohns"
+        android:orientation="vertical"
+        android:gravity="bottom">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="vertical"
+            android:background="@color/white_transparent"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/textViewNamePlacePromotion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:text="Nombre" />
+            <TextView
+                android:id="@+id/textViewPromo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textColor="@color/black"
+                android:text="20% en pizzas grandes" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CapitalSocial</string>
+    <string name="login_email_pass">o ingresa tu correo y contraseña</string>
+    <string name="login_button_access">Ingresar</string>
+    <string name="login_button_register">Regístrate</string>
+    <string name="login_text_user">Usuario</string>
+    <string name="login_text_pass">Contraseña</string>
+    <string name="login_text_forgotten_password">¿Has olvidado tu contraseña?</string>
+</resources>
