@@ -35,8 +35,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 LoginPresenter loginPresenter = new LoginPresenter();
                 try {
                     loginPresenter.login();
-                    Intent mainIntent = new Intent().setClass(LoginActivity.this, PromotionsActivity.class);
-                    startActivity(mainIntent);
+                    //Intent mainIntent = new Intent().setClass(LoginActivity.this, PromotionsActivity.class);
+                    //startActivity(mainIntent);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

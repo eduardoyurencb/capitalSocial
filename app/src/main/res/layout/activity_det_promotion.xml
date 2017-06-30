@@ -1,9 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/imageViewPromotion"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    tools:context=".det_promotion.view.DetPromotionActivity">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
-</LinearLayout>
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/imageViewPromotion"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginLeft="18dp"
+            android:text="@string/lorem_ipsum"/>
+    </LinearLayout>
+    <com.github.clans.fab.FloatingActionMenu
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        app:menu_icon="@mipmap/iconocompartir"
+        app:menu_colorNormal="@color/colorAccent"
+        app:menu_backgroundColor="@color/trans"
+        app:menu_labels_colorNormal="@color/white"
+        app:menu_labels_textColor="@color/colorAccent">
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            app:fab_label="@string/floating_button_mail"
+            app:fab_colorNormal="@color/white"
+            app:fab_size="mini"
+            android:src="@mipmap/iconocompartirmail">
+        </com.github.clans.fab.FloatingActionButton>
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            app:fab_label="@string/floating_button_whats"
+            app:fab_colorNormal="@color/white"
+            app:fab_size="mini"
+            android:src="@mipmap/iconocompartirwhats">
+        </com.github.clans.fab.FloatingActionButton>
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            app:fab_label="@string/floating_button_twitter"
+            app:fab_colorNormal="@color/white"
+            app:fab_size="mini"
+            android:src="@mipmap/iconocompartirtwitter">
+        </com.github.clans.fab.FloatingActionButton>
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            app:fab_label="@string/floating_button_facebook"
+            app:fab_colorNormal="@color/white"
+            app:fab_size="mini"
+            android:src="@mipmap/iconocompartirfacebook">
+        </com.github.clans.fab.FloatingActionButton>
+    </com.github.clans.fab.FloatingActionMenu>
+</android.support.design.widget.CoordinatorLayout>

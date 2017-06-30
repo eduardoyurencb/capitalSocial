@@ -24,6 +24,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 Intent mainIntent = new Intent().setClass(SplashActivity.this, LoginActivity.class);
                 startActivity(mainIntent);
+                finish();
             }
         };
         Timer timer = new Timer();

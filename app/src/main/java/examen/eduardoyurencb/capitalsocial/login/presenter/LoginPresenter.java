@@ -6,17 +6,14 @@ import android.util.Log;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import examen.eduardoyurencb.capitalsocial.RestCliente.ApiInterfaces;
 import examen.eduardoyurencb.capitalsocial.base.presenter.Presenter;
-import examen.eduardoyurencb.capitalsocial.login.domain.model.request.LoginRequest;
 import examen.eduardoyurencb.capitalsocial.login.domain.model.response.LoginResponse;
 import examen.eduardoyurencb.capitalsocial.login.view.LoginView;
-import examen.eduardoyurencb.capitalsocial.utils.Constans;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import examen.eduardoyurencb.capitalsocial.RestCliente.RestCliente;
+
 
 /**
  * Created by eduardoyurencb on 6/14/17.
@@ -25,24 +22,20 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class LoginPresenter extends Presenter<LoginView> {
 
     public void login() throws JSONException {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constans.URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        //Declaramos y llenamos nuestro objeto Request
-        LoginRequest requestPost = new LoginRequest();
 
-        //Declaramos la interfaz y dejamos que retrofit la instancie
-        ApiInterfaces interfaces = retrofit.create(ApiInterfaces.class);
+        RestCliente.ApiInterface service;
+        service = RestCliente.getClient();
 
-        JSONObject paramObject = new JSONObject();
-        paramObject.put("pass","password");
-        paramObject.put("user","Luis");
+        String aux = "{\"data\":{\"pass\":\"password\",\"user\":\"Luis\"}}";
+        JSONObject object = new JSONObject(aux);
+        //JSONObject paramObject = new JSONObject();
+        //paramObject.put("pass","password");
+        //paramObject.put("user","Luis");
 
-        JSONObject paramObjectFinal = new JSONObject();
-        paramObjectFinal.put("data", paramObject);
+        //JSONObject paramObjectFinal = new JSONObject();
+        //paramObjectFinal.put("data", paramObject);
         //Hacemos el objeto tipo llamada
-        Call<LoginResponse> responseCall = interfaces.login(paramObjectFinal);
+        Call<LoginResponse> responseCall = service.login(aux);
 
         //Hacemos la llamada asíncrona. En este caso declaré el callback dentro
         //del mismo método. En lo personal me gusta crear una clase aparte
