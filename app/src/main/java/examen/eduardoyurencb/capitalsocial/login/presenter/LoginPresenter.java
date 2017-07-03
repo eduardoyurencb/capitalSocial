@@ -50,7 +50,7 @@ public class LoginPresenter extends Presenter<LoginView> {
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 getView().hideLoadingView();
-                Log.d("masterkey", t.getMessage());
+                getView().showErrorMessage(null);
             }
         });
 

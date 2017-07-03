@@ -3,6 +3,7 @@ package examen.eduardoyurencb.capitalsocial.login.view;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private ProgressDialog progressDialog;
     private LoginPresenter loginPresenter;
     private EditText editTextPersonName, editTextPassword;
+    private AlertDialog.Builder builder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +44,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         progressDialog.setMessage("Conectando ...");
         progressDialog.setCancelable(false);
 
-
+        builder = new AlertDialog.Builder(this);
+        builder.setTitle("Login");
+        builder.setMessage("Las credenciales son incorrectas");
+        builder.setPositiveButton("Aceptar",null);
+        builder.create();
     }
 
     @Override
@@ -70,9 +76,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void showErrorMessage(Error error) {
-        //AlertDialogTool.alertShow("ERROR", error.getMessage() != null ? error.getMessage() : "", "ACEPTAR", null, this);
+        builder.show();
     }
 
-    //Intent mainIntent = new Intent().setClass(LoginActivity.this, PromotionsActivity.class);
-    //startActivity(mainIntent);
+    
 }
