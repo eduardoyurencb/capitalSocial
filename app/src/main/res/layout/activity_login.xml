@@ -11,13 +11,11 @@
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:src="@drawable/logologincapitalsocial"/>
-    <Button
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/loginFaceBookButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
-        android:background="@color/colorAccent"
-        android:textColor="@color/white"
-        android:drawableLeft="@mipmap/iconofacebook"
         android:text="INICIA SESION CON FACEBOOK"/>
     <TextView
         android:layout_width="wrap_content"

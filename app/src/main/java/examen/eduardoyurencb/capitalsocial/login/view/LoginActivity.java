@@ -9,6 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+
 import org.json.JSONException;
 
 import examen.eduardoyurencb.capitalsocial.R;
@@ -21,6 +28,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private LoginPresenter loginPresenter;
     private EditText editTextPersonName, editTextPassword;
     private AlertDialog.Builder builder;
+    private LoginButton loginButton;
+    private CallbackManager callbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +54,26 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         builder.setMessage("Las credenciales son incorrectas");
         builder.setPositiveButton("Aceptar",null);
         builder.create();
+
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        callbackManager = CallbackManager.Factory.create();
+        loginButton = (LoginButton)findViewById(R.id.loginFaceBookButton);
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                launchHome();
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException e) {
+
+            }
+        });
     }
 
     @Override
@@ -80,5 +109,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void launchHome() {
         Intent mainIntent = new Intent().setClass(LoginActivity.this, PromotionsActivity.class);
         startActivity(mainIntent);
+        finish();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 }
