@@ -1,9 +1,5 @@
 package examen.eduardoyurencb.capitalsocial.login.domain.model.request;
 
-/**
- * Created by eduardoyurencb on 6/14/17.
- */
-
 public class LoginRequest {
     private String user;
     private String password;

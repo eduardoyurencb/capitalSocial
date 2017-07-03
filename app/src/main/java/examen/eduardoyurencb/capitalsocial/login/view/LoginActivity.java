@@ -15,10 +15,6 @@ import examen.eduardoyurencb.capitalsocial.R;
 import examen.eduardoyurencb.capitalsocial.login.presenter.LoginPresenter;
 import examen.eduardoyurencb.capitalsocial.promotion.view.PromotionsActivity;
 
-/**
- * Created by eduardoyurencb on 6/14/17.
- */
-
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, LoginView {
 
     private ProgressDialog progressDialog;
@@ -79,5 +75,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         builder.show();
     }
 
-    
+
+    @Override
+    public void launchHome() {
+        Intent mainIntent = new Intent().setClass(LoginActivity.this, PromotionsActivity.class);
+        startActivity(mainIntent);
+    }
 }

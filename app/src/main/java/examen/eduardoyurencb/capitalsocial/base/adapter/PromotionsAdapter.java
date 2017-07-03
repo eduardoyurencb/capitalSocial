@@ -14,10 +14,6 @@ import examen.eduardoyurencb.capitalsocial.R;
 import examen.eduardoyurencb.capitalsocial.promotion.model.PromotionView;
 import examen.eduardoyurencb.capitalsocial.utils.Constans;
 
-/**
- * Created by eduardoyurencb on 6/14/17.
- */
-
 public class PromotionsAdapter extends BaseAdapter{
 
     private List<PromotionView> items;

@@ -9,9 +9,6 @@ import android.widget.ImageView;
 import examen.eduardoyurencb.capitalsocial.R;
 import examen.eduardoyurencb.capitalsocial.utils.Constans;
 
-/**
- * Created by eduardoyurencb on 6/14/17.
- */
 
 public class DetPromotionActivity extends AppCompatActivity {
     @Override

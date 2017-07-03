@@ -1,25 +1,17 @@
 package examen.eduardoyurencb.capitalsocial.login.presenter;
 
 
-import android.util.Log;
-
 import com.google.gson.JsonObject;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
+import examen.eduardoyurencb.capitalsocial.RestCliente.RestCliente;
 import examen.eduardoyurencb.capitalsocial.base.presenter.Presenter;
 import examen.eduardoyurencb.capitalsocial.login.domain.model.response.LoginResponse;
 import examen.eduardoyurencb.capitalsocial.login.view.LoginView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import examen.eduardoyurencb.capitalsocial.RestCliente.RestCliente;
-
-
-/**
- * Created by eduardoyurencb on 6/14/17.
- */
 
 public class LoginPresenter extends Presenter<LoginView> {
 
@@ -43,7 +35,7 @@ public class LoginPresenter extends Presenter<LoginView> {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 getView().hideLoadingView();
-                Log.d("masterkey", response.body().toString());
+                getView().launchHome();
 
             }
 

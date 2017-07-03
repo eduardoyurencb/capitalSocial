@@ -1,8 +1,5 @@
 package examen.eduardoyurencb.capitalsocial.promotion.model;
 
-/**
- * Created by eduardoyurencb on 6/14/17.
- */
 
 public class PromotionView {
     private String namePlace;

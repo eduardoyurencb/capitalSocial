@@ -15,10 +15,6 @@ import examen.eduardoyurencb.capitalsocial.base.adapter.PromotionsAdapter;
 import examen.eduardoyurencb.capitalsocial.det_promotion.view.DetPromotionActivity;
 import examen.eduardoyurencb.capitalsocial.promotion.model.PromotionView;
 
-/**
- * Created by eduardoyurencb on 6/14/17.
- */
-
 public class PromotionsActivity extends AppCompatActivity {
 
     @Override

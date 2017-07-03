@@ -2,8 +2,6 @@ package examen.eduardoyurencb.capitalsocial.RestCliente;
 
 import com.google.gson.JsonObject;
 
-import org.json.JSONObject;
-
 import java.io.IOException;
 
 import examen.eduardoyurencb.capitalsocial.login.domain.model.response.LoginResponse;
@@ -18,11 +16,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
-import okhttp3.*;
-
-/**
- * Created by eduardoyurencb on 6/30/17.
- */
 
 public class RestCliente {
     private static ApiInterface ApiInterface ;
