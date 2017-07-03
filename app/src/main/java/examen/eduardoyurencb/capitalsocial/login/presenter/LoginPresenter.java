@@ -3,6 +3,8 @@ package examen.eduardoyurencb.capitalsocial.login.presenter;
 
 import android.util.Log;
 
+import com.google.gson.JsonObject;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -21,34 +23,34 @@ import examen.eduardoyurencb.capitalsocial.RestCliente.RestCliente;
 
 public class LoginPresenter extends Presenter<LoginView> {
 
-    public void login() throws JSONException {
-
+    public void login(String pass, String user) throws JSONException {
+        getView().showLoadingView();
         RestCliente.ApiInterface service;
         service = RestCliente.getClient();
 
-        String aux = "{\"data\":{\"pass\":\"password\",\"user\":\"Luis\"}}";
-        JSONObject object = new JSONObject(aux);
-        //JSONObject paramObject = new JSONObject();
-        //paramObject.put("pass","password");
-        //paramObject.put("user","Luis");
+        JsonObject paramObject = new JsonObject();
 
-        //JSONObject paramObjectFinal = new JSONObject();
-        //paramObjectFinal.put("data", paramObject);
-        //Hacemos el objeto tipo llamada
-        Call<LoginResponse> responseCall = service.login(aux);
+        //password, Luis
+        paramObject.addProperty("pass",pass);
+        paramObject.addProperty("user",user);
 
-        //Hacemos la llamada asíncrona. En este caso declaré el callback dentro
-        //del mismo método. En lo personal me gusta crear una clase aparte
-        //o implementar la interfaz en la clase
+        JsonObject paramObjectFinal = new JsonObject();
+        paramObjectFinal.add("data", paramObject);
+
+        Call<LoginResponse> responseCall = service.login(paramObjectFinal);
+
         responseCall.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                //Log.d("masterkey", response.body().toString());
+                getView().hideLoadingView();
+                Log.d("masterkey", response.body().toString());
+
             }
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                //Log.d("masterkey", t.getMessage());
+                getView().hideLoadingView();
+                Log.d("masterkey", t.getMessage());
             }
         });
 

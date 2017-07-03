@@ -1,5 +1,7 @@
 package examen.eduardoyurencb.capitalsocial.RestCliente;
 
+import com.google.gson.JsonObject;
+
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -30,7 +32,6 @@ public class RestCliente {
 
         if (ApiInterface == null) {
             // Creamos nuestro interceptor
-
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
 
             //HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
@@ -69,7 +70,7 @@ public class RestCliente {
 
     public interface ApiInterface {
         @POST("login")
-        Call<LoginResponse> login(@Body String loginRequest);
+        Call<LoginResponse> login(@Body JsonObject loginRequest);
     }
 
 

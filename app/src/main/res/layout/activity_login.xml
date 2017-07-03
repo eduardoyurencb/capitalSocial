@@ -48,6 +48,8 @@
                 android:textSize="11sp"
                 android:text="@string/login_text_user"/>
             <EditText
+                android:id="@+id/editTextPersonName"
+                android:inputType="textPersonName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -73,6 +75,7 @@
                 android:textSize="11sp"
                 android:text="@string/login_text_pass"/>
             <EditText
+                android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"/>
